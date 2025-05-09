@@ -1,3 +1,5 @@
+FORKED REPO:: https://github.com/trupti11/mlops-exercise 
+
 /Users/trupti88/.zshrc:1: permission denied: /opt/homebrew/bin/brew
 /Users/trupti88/.zshrc:2: permission denied: /opt/homebrew/bin/brew
 /Users/trupti88/.zshrc:3: permission denied: /opt/homebrew/bin/brew
