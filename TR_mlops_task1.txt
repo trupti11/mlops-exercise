@@ -1,0 +1,111 @@
+/Users/trupti88/.zshrc:1: permission denied: /opt/homebrew/bin/brew
+/Users/trupti88/.zshrc:2: permission denied: /opt/homebrew/bin/brew
+/Users/trupti88/.zshrc:3: permission denied: /opt/homebrew/bin/brew
+/Users/trupti88/.zshrc:4: permission denied: /opt/homebrew/bin/brew
+/Users/trupti88/.zshrc:5: permission denied: /opt/homebrew/bin/brew
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+zsh: command not found: venvScriptsactivate
+Requirement already satisfied: pandas in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (2.2.3)
+Requirement already satisfied: scikit-learn in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from -r requirements.txt (line 2)) (1.6.1)
+Requirement already satisfied: joblib in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from -r requirements.txt (line 3)) (1.4.2)
+Collecting faker (from -r requirements.txt (line 4))
+  Downloading faker-37.1.0-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: pytest in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from -r requirements.txt (line 5)) (8.3.5)
+Requirement already satisfied: numpy>=1.26.0 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from pandas->-r requirements.txt (line 1)) (2.2.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from pandas->-r requirements.txt (line 1)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from pandas->-r requirements.txt (line 1)) (2025.1)
+Requirement already satisfied: tzdata>=2022.7 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from pandas->-r requirements.txt (line 1)) (2025.1)
+Requirement already satisfied: scipy>=1.6.0 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from scikit-learn->-r requirements.txt (line 2)) (1.15.1)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from scikit-learn->-r requirements.txt (line 2)) (3.5.0)
+Requirement already satisfied: iniconfig in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from pytest->-r requirements.txt (line 5)) (2.1.0)
+Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from pytest->-r requirements.txt (line 5)) (24.2)
+Requirement already satisfied: pluggy<2,>=1.5 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from pytest->-r requirements.txt (line 5)) (1.5.0)
+Requirement already satisfied: six>=1.5 in /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 1)) (1.17.0)
+Downloading faker-37.1.0-py3-none-any.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 30.9 MB/s eta 0:00:00
+Installing collected packages: faker
+Successfully installed faker-37.1.0
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python -m venv venv
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % venv\Scripts\activate
+zsh: command not found: venvScriptsactivate
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python util/generate.py
+Traceback (most recent call last):
+  File "/Users/trupti88/code/mlops-exercise/util/generate.py", line 24, in <module>
+    df.to_csv('data/credit_card_records.csv', index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/core/generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path_or_buf,
+        ^^^^^^^^^^^^
+    ...<14 lines>...
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/format.py", line 1014, in to_csv
+    csv_formatter.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/formats/csvs.py", line 251, in save
+    with get_handle(
+         ~~~~~~~~~~^
+        self.filepath_or_buffer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        storage_options=self.storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handles:
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pandas/io/common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data'
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % mkdir -p data
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python util/generate.py
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python util/generate.py
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python -m venv venv    
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % venv\Scripts\activate  
+zsh: command not found: venvScriptsactivate
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python util/generate.py
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % venv\Scripts\activate  
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python app.py
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+Traceback (most recent call last):
+  File "/Users/trupti88/code/mlops-exercise/app.py", line 66, in <module>
+    main()
+    ~~~~^^
+  File "/Users/trupti88/code/mlops-exercise/app.py", line 57, in main
+    save_model(model, 'models/model.pkl')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/trupti88/code/mlops-exercise/app.py", line 38, in save_model
+    joblib.dump(model, filepath)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/joblib/numpy_pickle.py", line 552, in dump
+    with open(filename, 'wb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'models/model.pkl'
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % mkdir -p models
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % python app.py
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+Model accuracy is:  0.7
+(3.12.0) trupti88@Truptis-MacBook-Pro mlops-exercise % 
